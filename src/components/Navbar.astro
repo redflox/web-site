@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon'
+
+const textLinks: { label: string; href: string }[] = [
+    { label: 'Home', href: '/' },
+    { label: 'Work', href: '/work/' },
+    { label: 'About', href: '/about/' },
+];
+
+const socialNetwors: { label: string; href: string; icon: string }[] = [
+    { label: 'GitHub', href: 'https://github.com/redflox', icon: 'github' },
+    { label: 'Linkedin', href: 'https://www.linkedin.com/in/bfmunozm96', icon: 'linkedin' },
+];
+---
+
+<div 
+    class="w-full z-50 m-auto container max-w-6xl font-medium mb-14">
+    <div 
+        class="flex justify-between gap-2 px-4 pt-6">
+        <a 
+            href="/" 
+            class="flex flex-grow basis-0 gap-2 items-center no-underline">
+            <!-- Icono de terminal o logo -->
+            <picture class="w-8 h-8 transform hover:scale-110 transition duration-500 ease-out">
+                <Icon name="terminal" />
+            </picture>
+            <span class="text-white">Bryan Muñoz</span>
+        </a>
+        <nav 
+            class='hidden sm:block'>
+            <ul 
+                class='flex h-full bg-[#F0ECE2] rounded-full p-1'>
+                {
+                    textLinks.map(link => (
+                        <li class='text-gray-900'>
+                            <a 
+                                href={link.href} 
+                                class='flex items-center justify-center h-full px-4 hover:bg-[#F4C542] hover:rounded-full'>
+                                {link.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+        <nav class='hidden sm:flex sm:flex-grow sm:basis-0 sm:justify-end'>
+            <ul class='flex'>
+                {
+                    socialNetwors.map(social => (
+                        <li class="p-1 ml-2 hover:cursor-pointer transform hover:scale-110 transition duration-500 ease-out">
+                            <a href={social.href} target='_blank' class="text-white">
+                                <picture>
+                                    <Icon name={social.icon} class="w-8 h-8"/>
+                                </picture>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<style>
+    [astro-icon] {
+        color: white;
+        /* OR */
+        /* fill: blue; */
+
+    }
+</style>
