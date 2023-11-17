@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import LocalMe1Image from "../icons/me1.webp";
-import LocalDockerImage from '../icons/docker.svg'
+import LocalBackgroundImage from "../icons/introCardBackground.webp";
+import LocalDockerImage from "../icons/docker.svg";
 import LocalJavaImage from "../icons/java.svg";
 import LocalPythonImage from "../icons/python.svg";
 import LocalLinuxImage from "../icons/linux.svg";
-import LocalJavascriptImage from '../icons/javascript.svg'
+import LocalJavascriptImage from "../icons/javascript.svg";
 // interface Props {
 // title: string;
 // body: string;
@@ -15,103 +16,78 @@ import LocalJavascriptImage from '../icons/javascript.svg'
 // const { href, title, body } = Astro.props;
 ---
 
-<div
-	class="intro-card shadow-lg rounded-lg relative col-span-3 sm:col-span-3 aspect-[3/2] row-span-2 overflow-hidden"
+<a
+	class="contenedor shadow-lg rounded-lg relative col-span-3 sm:col-span-3 aspect-[3/2] row-span-2 overflow-hidden"
+	href="/curriculum-vitae"
 >
-	<div class="h-full w-full flex flex-col justify-center">
-		<div class="avatar flex justify-center">
-			<div class="w-36 h-36 md:w-48 md:h-48 lg:h-60 lg:w-60 xl:w-72xl:h-72 rounded-full opacity-60 hover:opacity-100 transition duration-1000">
-				<Image src={LocalMe1Image} alt="me" />
+	<Image class="background" src={LocalBackgroundImage} alt="Background" />
+	<div class="h-full w-full flex flex-col justify-center z-10">
+		<div class="w-full h-full flex flex-row justify-center gap-4 md:gap-12">
+			<div class="avatar flex flex-col justify-center ">
+				<div
+					class="w-24 h-24 md:w-48 md:h-48 lg:h-60 lg:w-60 xl:w-72xl:h-72 rounded-full"
+					transition:name="introcard image"
+				>
+					<Image src={LocalMe1Image} alt="me" />
+				</div>
+			</div>
+
+			<div class="flex flex-col justify-center">
+				<div
+					class="flex justify-start font-bold text-lg md:text-4xl lg:text-6xl mb-2 text-white black-text-shadow"
+					transition:name="introcard name"
+				>
+					Bryan Muñoz
+				</div>
+				<p
+					class="text-md md:text-lg lg:text-xl flex justify-start text-white black-text-shadow"
+					transition:name="introcard description"
+				>
+					Systems Engineer <br>
+					Developer
+				</p>
 			</div>
 		</div>
-		<div class="px-6 py-4 flex flex-col  align-middle">
+		<div class="px-6 py-4 flex flex-col align-middle z-10">
 			<div
-				class="flex justify-center font-bold text-2xl  md:text-4xl lg:text-6xl mb-2 text-white black-text-shadow"
+				class="flex flex-row justify-center"
+				transition:name="introcard tecnologies"
 			>
-				Bryan Muñoz
-			</div>
-			<p
-				class="text-md  md:text-lg lg:text-xl flex justify-center text-gray-100  black-text-shadow"
-			>
-				Developer
-			</p>
-			<div class="flex flex-row justify-center ">
-					<span class="w-14 h-14 p-2">
-						<Image src={LocalJavaImage} alt="Logo Java" />
-					</span>
-					<span class="w-14 h-14 p-2">
-						<Image src={LocalPythonImage} alt="Logo Python" />
-					</span>
-					<span class="rounded-full w-14 h-14 p-2">
-						<Image src={LocalJavascriptImage} alt="Logo JavaScript" />
-					</span>
-					<span class="rounded-full w-14 h-14 p-2">
-						<Image src={LocalLinuxImage} alt="Logo Linux" />
-					</span>
-					
-					
+				<span class="w-10 h-10 p-2  md:w-14 md:h-14 transition duration-500 hover:scale-150">
+					<Image src={LocalJavaImage} alt="Logo Java" />
+				</span>
+				<span class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150">
+					<Image src={LocalPythonImage} alt="Logo Python" />
+				</span>
+				<span class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150">
+					<Image src={LocalJavascriptImage} alt="Logo JavaScript" />
+				</span>
+				<span class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150">
+					<Image src={LocalLinuxImage} alt="Logo Linux" />
+				</span>
 			</div>
 		</div>
 	</div>
-</div>
+</a>
 
 <style>
-	.intro-card {
-		background-image: url("https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg");
-		background-size: cover;
-		-webkit-animation: slidein 100s;
-		animation: slidein 100s;
-		-webkit-animation-fill-mode: forwards;
-		animation-fill-mode: forwards;
-
-		-webkit-animation-iteration-count: infinite;
-		animation-iteration-count: infinite;
-
-		-webkit-animation-direction: alternate;
-		animation-direction: alternate;
-	}
-
-	
-
-	@-webkit-keyframes slidein {
-		from {
-			background-position: top;
-			background-size: 3000px;
-		}
-		to {
-			background-position: -100px 0px;
-			background-size: 2750px;
-		}
-	}
-
-	@keyframes slidein {
-		from {
-			background-position: top;
-			background-size: 3000px;
-		}
-		to {
-			background-position: -100px 0px;
-			background-size: 2750px;
-		}
-	}
-
-	.center {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.background {
+		background-color: white;
+		opacity: 0.9;
 		position: absolute;
-		margin: auto;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background: rgba(75, 75, 250, 0.3);
-		border-radius: 3px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		overflow: hidden;
+		height: 100%;
+		z-index: 0;
+		transition: opacity 0.5s ease-in-out;
 	}
-	.center h1 {
-		text-align: center;
-		color: white;
-		font-family: "Source Code Pro", monospace;
-		text-transform: uppercase;
+
+	.contenedor:hover .background {
+		opacity: 1;
+	}
+	.contenedor:hover {
+		cursor: pointer;
 	}
 </style>

@@ -14,7 +14,7 @@ const socialNetwors: { label: string; href: string; icon: string }[] = [
 ---
 
 <div 
-    class="w-full z-50 m-auto container max-w-6xl font-medium mb-14">
+    class="text-black w-full z-50 m-auto container max-w-6xl font-medium mb-14">
     <div 
         class="flex justify-between gap-2 px-4 pt-6">
         <a 
@@ -24,7 +24,7 @@ const socialNetwors: { label: string; href: string; icon: string }[] = [
             <picture class="w-8 h-8 hover:scale-125 transition duration-500 ease-out">
                 <Icon name="terminal" />
             </picture>
-            <span class="text-white">Bryan Muñoz</span>
+            <span class="">Bryan Muñoz</span>
         </a>
         <nav 
             class='hidden sm:block'>
@@ -48,7 +48,7 @@ const socialNetwors: { label: string; href: string; icon: string }[] = [
                 {
                     socialNetwors.map(social => (
                         <li class="p-1 ml-2 hover:cursor-pointer hover:scale-150 transition duration-500 ease-out">
-                            <a href={social.href} target='_blank' class="text-white">
+                            <a href={social.href} target='_blank' >
                                 <picture>
                                     <Icon name={social.icon} class="w-8 h-8"/>
                                 </picture>
@@ -63,7 +63,7 @@ const socialNetwors: { label: string; href: string; icon: string }[] = [
 
 <style>
     [astro-icon] {
-        color: white;
+        /* color: white; */
         /* OR */
         /* fill: blue; */
 
