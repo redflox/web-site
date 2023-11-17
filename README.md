@@ -1,6 +1,6 @@
 # Bryan Muñoz: Portfolio
 
-[![Open in StackBlitz]](http://redflox.com/)
+[![Open]](http://redflox.com/)]
 
 > 🧑‍🚀 **me custom portfolio**
 
