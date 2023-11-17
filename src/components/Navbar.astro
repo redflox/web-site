@@ -2,9 +2,9 @@
 import { Icon } from 'astro-icon'
 
 const textLinks: { label: string; href: string }[] = [
-    { label: 'Home', href: '/' },
-    { label: 'Work', href: '/work/' },
-    { label: 'About', href: '/about/' },
+    { label: 'Inicio', href: '/' },
+    { label: 'Portafolio', href: '/portafolio' },
+    { label: 'Contacto', href: '/contacto' },
 ];
 
 const socialNetwors: { label: string; href: string; icon: string }[] = [
@@ -21,7 +21,7 @@ const socialNetwors: { label: string; href: string; icon: string }[] = [
             href="/" 
             class="flex flex-grow basis-0 gap-2 items-center no-underline">
             <!-- Icono de terminal o logo -->
-            <picture class="w-8 h-8 transform hover:scale-110 transition duration-500 ease-out">
+            <picture class="w-8 h-8 hover:scale-125 transition duration-500 ease-out">
                 <Icon name="terminal" />
             </picture>
             <span class="text-white">Bryan Muñoz</span>
@@ -47,7 +47,7 @@ const socialNetwors: { label: string; href: string; icon: string }[] = [
             <ul class='flex'>
                 {
                     socialNetwors.map(social => (
-                        <li class="p-1 ml-2 hover:cursor-pointer transform hover:scale-110 transition duration-500 ease-out">
+                        <li class="p-1 ml-2 hover:cursor-pointer hover:scale-150 transition duration-500 ease-out">
                             <a href={social.href} target='_blank' class="text-white">
                                 <picture>
                                     <Icon name={social.icon} class="w-8 h-8"/>

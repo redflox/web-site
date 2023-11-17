@@ -1,42 +1,117 @@
 ---
+import { Image } from "astro:assets";
+import LocalMe1Image from "../icons/me1.webp";
+import LocalDockerImage from '../icons/docker.svg'
+import LocalJavaImage from "../icons/java.svg";
+import LocalPythonImage from "../icons/python.svg";
+import LocalLinuxImage from "../icons/linux.svg";
+import LocalJavascriptImage from '../icons/javascript.svg'
 // interface Props {
-	// title: string;
-	// body: string;
-	// href: string;
+// title: string;
+// body: string;
+// href: string;
 // }
 
 // const { href, title, body } = Astro.props;
 ---
 
 <div
-	class="bg-zinc-900 shadow-lg rounded-lg relative  col-span-3 sm:col-span-3 aspect-[3/2] row-span-2 overflow-hidden"
+	class="intro-card shadow-lg rounded-lg relative col-span-3 sm:col-span-3 aspect-[3/2] row-span-2 overflow-hidden"
 >
-	<div class="w-full h-full flex flex-row p-2 flex-wrap justify-around ">
-		<div class="flex flex-col justify-end">
-			<div class="px-6 py-4">
-				<div class="font-bold text-xl mb-2">Bryan Muñoz</div>
-				<p class="text-gray-300 text-base">
-				  Developer
-				</p>
-			  </div>
-			  <div class="px-6 pt-4 pb-2">
-				<a href="#home" class="inline-block bg-transparent hover:bg-gray-700 text-white font-semibold py-2 px-4 border border-white rounded">Home</a>
-				<a href="#work" class="inline-block bg-transparent hover:bg-gray-700 text-white font-semibold py-2 px-4 border border-white rounded">Work</a>
-				<a href="#about" class="inline-block bg-transparent hover:bg-gray-700 text-white font-semibold py-2 px-4 border border-white rounded">About</a>
-			  </div>
-			  <div class="px-6 pt-4 pb-2">
-				<!-- Iconos de redes sociales aquí -->
-			  </div>
+	<div class="h-full w-full flex flex-col justify-center">
+		<div class="avatar flex justify-center">
+			<div class="w-36 h-36 md:w-48 md:h-48 lg:h-60 lg:w-60 xl:w-72xl:h-72 rounded-full opacity-60 hover:opacity-100 transition duration-1000">
+				<Image src={LocalMe1Image} alt="me" />
+			</div>
 		</div>
-		<div>
-			<p>Imagen</p>
+		<div class="px-6 py-4 flex flex-col  align-middle">
+			<div
+				class="flex justify-center font-bold text-2xl  md:text-4xl lg:text-6xl mb-2 text-white black-text-shadow"
+			>
+				Bryan Muñoz
+			</div>
+			<p
+				class="text-md  md:text-lg lg:text-xl flex justify-center text-gray-100  black-text-shadow"
+			>
+				Developer
+			</p>
+			<div class="flex flex-row justify-center ">
+					<span class="w-14 h-14 p-2">
+						<Image src={LocalJavaImage} alt="Logo Java" />
+					</span>
+					<span class="w-14 h-14 p-2">
+						<Image src={LocalPythonImage} alt="Logo Python" />
+					</span>
+					<span class="rounded-full w-14 h-14 p-2">
+						<Image src={LocalJavascriptImage} alt="Logo JavaScript" />
+					</span>
+					<span class="rounded-full w-14 h-14 p-2">
+						<Image src={LocalLinuxImage} alt="Logo Linux" />
+					</span>
+					
+					
+			</div>
 		</div>
 	</div>
-
 </div>
 
-
-
 <style>
+	.intro-card {
+		background-image: url("https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg");
+		background-size: cover;
+		-webkit-animation: slidein 100s;
+		animation: slidein 100s;
+		-webkit-animation-fill-mode: forwards;
+		animation-fill-mode: forwards;
+
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+
+		-webkit-animation-direction: alternate;
+		animation-direction: alternate;
+	}
+
 	
+
+	@-webkit-keyframes slidein {
+		from {
+			background-position: top;
+			background-size: 3000px;
+		}
+		to {
+			background-position: -100px 0px;
+			background-size: 2750px;
+		}
+	}
+
+	@keyframes slidein {
+		from {
+			background-position: top;
+			background-size: 3000px;
+		}
+		to {
+			background-position: -100px 0px;
+			background-size: 2750px;
+		}
+	}
+
+	.center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(75, 75, 250, 0.3);
+		border-radius: 3px;
+	}
+	.center h1 {
+		text-align: center;
+		color: white;
+		font-family: "Source Code Pro", monospace;
+		text-transform: uppercase;
+	}
 </style>

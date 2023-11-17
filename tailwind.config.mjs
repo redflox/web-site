@@ -4,14 +4,17 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-			  'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-			  'gradient-conic':
-				'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic':
+					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			aspectRatio: {
-			  '3/2': '3 / 2'
-			},
-		  },
+				'3/2': '3 / 2'
+			}
+		},
 	},
-	plugins: [require('daisyui')],
+	plugins: [
+		require('daisyui')
+		
+	],
 }
