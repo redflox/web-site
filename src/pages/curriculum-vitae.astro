@@ -2,10 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import LocalMe1Image from "../icons/me1.webp";
-import LocalJavaImage from "../icons/java.svg";
-import LocalPythonImage from "../icons/python.svg";
-import LocalLinuxImage from "../icons/linux.svg";
-import LocalJavascriptImage from "../icons/javascript.svg";
 
 type Contact = {
 	icon: string;
@@ -226,11 +222,7 @@ const jobExperiences: JobExperience[] = [
 						{
 							personalExperiences.map( personalExperience => <li>
 									{personalExperience.title} 
-									{ 
-										(personalExperience.repository !== undefined || personalExperience.href !== undefined) 
-    									? <a class="underline font-semibold text-sm text-zinc-600" target="_blank" href={personalExperience.href}>{personalExperience.repository}</a>
-   										: null
-									}
+									{(personalExperience.repository !== undefined || personalExperience.href !== undefined) ? <a class="underline font-semibold text-sm text-zinc-600" target="_blank" href={personalExperience.href}>{personalExperience.repository}</a> : null}
 								</li>)
 						}
 					</ul>
