@@ -4,8 +4,9 @@
 
 > 🧑‍🚀 **me custom portfolio**
 
+¿how to execute eslint? remmember install dependencies of development for it to work.
 ```
-    npx eslint "src/**/*.{js,astro}"
+npx eslint "src/**/*.{js,astro}"
 ```
 
 ## 🚀 Project Structure
