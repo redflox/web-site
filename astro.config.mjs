@@ -12,7 +12,7 @@ export default defineConfig({
     mode: "standalone"
   }),
   server: {
-    port: 4321,
-    host: 'localhost'
+    port: import.meta.env.PORT || 4321,
+    host: import.meta.env.HOST || 'localhost'
   }
 });
