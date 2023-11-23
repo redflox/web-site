@@ -5,7 +5,7 @@ jobs:
     name: build-and-deploy
     runs-on: ubuntu-latest
     steps:
-      - name: download changes, and rebuild and run container
+      name: download changes, and rebuild and run container
       usus: appleboy/ssh-action@v0.1.7
       with:
         host: ${{ secrets.HOST }}
