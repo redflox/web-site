@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import LocalMe1Image from "../icons/me1.webp";
-import LocalBackgroundImage from "../icons/introCardBackground.webp";
 import LocalJavaImage from "../icons/java.svg";
 import LocalPythonImage from "../icons/python.svg";
 import LocalLinuxImage from "../icons/linux.svg";
@@ -19,8 +18,8 @@ import LocalJavascriptImage from "../icons/javascript.svg";
 	class="contenedor shadow-lg rounded-lg relative col-span-3 sm:col-span-3 aspect-[3/2] row-span-2 overflow-hidden"
 	href="/curriculum-vitae"
 >
-	<Image class="background" src={LocalBackgroundImage} alt="Background" />
-	<div class="h-full w-full flex flex-col justify-center z-10">
+	<!-- <Image class="background" src={LocalBackgroundImage} alt="Background" /> -->
+	<div class="bg-black h-full w-full flex flex-col justify-center z-10">
 		<div class="w-full h-full flex flex-row justify-center gap-4 md:gap-12">
 			<div class="avatar flex flex-col justify-center">
 				<div
@@ -78,7 +77,7 @@ import LocalJavascriptImage from "../icons/javascript.svg";
 
 <style>
 	.background {
-		background-color: white;
+		background-color: #000;
 		opacity: 0.9;
 		position: absolute;
 		top: 50%;
