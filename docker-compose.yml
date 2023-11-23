@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  client:
+    environment:
+      - NODE_ENV=production
+      - PORT=4321
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    working_dir: /app
+    stdin_open: true
+    ports:
+      - "81:4321"
+    restart: unless-stopped
+    volumes:
+      - data:/app
+
+volumes:
+  data:
