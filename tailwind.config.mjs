@@ -9,7 +9,14 @@ export default {
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			aspectRatio: {
-				'3/2': '3 / 2'
+				'3/2': '3 / 2',
+				'5/2': '5 / 2',
+			},
+			blur: {
+				xs: '1px',
+			},
+			scale: {
+				'101': '1.01',
 			}
 		},
 	},
