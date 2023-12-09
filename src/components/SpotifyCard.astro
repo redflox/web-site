@@ -15,18 +15,18 @@ const data = await response.json();
 ---
 
 <div
-    class="bg-white aspect-square shadow-lg rounded-lg relative col-span-1 row-span-1 w-full h-full overflow-hidden flex flex-col"
+    class="group bg-white aspect-square shadow-lg rounded-lg relative col-span-1 row-span-1 overflow-hidden flex flex-col"
 >
-    <picture class="absolute bottom-0 left-0 -z-0 opacity-80">
+    <picture class="absolute bottom-0 left-0 -z-0 opacity-80 group-hover:blur-xs transition ease-in-out duration-500">
         <img src={data.data.album.images[0].url} />
     </picture>
     <a
         href={data?.data.external_urls.spotify}
         target="_black"
-        class="z-20 hover:cursor-pointer"
+        class="absolute w-full h-full z-20"
     >
         <Image
-            class="w-20 p-4 transition duration-500 ease-out hover:scale-125"
+            class="w-20 p-4 transition duration-500 ease-out group-hover:scale-125"
             src={localSpotifyImage}
             alt="Logo de spotify animado"
         />
@@ -38,12 +38,12 @@ const data = await response.json();
             Last One Song
         </h2>
         <p
-            class="pl-2 font-semibold text-gray-100 text-sm black-text-shadow truncate"
+            class="pl-2 font-semibold text-gray-100 text-sm black-text-shadow truncate group-hover:text-white transition ease-in-out duration-700"
         >
             Song: <span class="font-normal">{data.data.name}</span>
         </p>
         <p
-            class="pl-2 font-semibold text-gray-300 truncate text-xs black-text-shadow"
+            class="pl-2 font-semibold text-gray-300 truncate text-xs black-text-shadow group-hover:text-white transition ease-in-out duration-700"
         >
             Artist: <span class="font-normal"
                 >{
