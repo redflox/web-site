@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from 'astro-icon/components'
 
 const textLinks: { label: string; href: string }[] = [
     { label: "Inicio", href: "/" },
@@ -27,9 +27,9 @@ const socialNetwors: { label: string; href: string; icon: string }[] = [
         >
             <!-- Icono de terminal o logo -->
             <picture
-                class="w-8 h-8 hover:scale-125 transition duration-500 ease-out"
+                class="hover:scale-125 transition duration-500 ease-out"
             >
-                <Icon name="terminal" />
+                <Icon name="terminal" class="w-8 h-8"/>
             </picture>
             <span class="">Bryan Muñoz</span>
         </a>
