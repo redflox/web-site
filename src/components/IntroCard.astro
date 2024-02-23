@@ -15,68 +15,66 @@ import LocalJavascriptImage from "../icons/javascript.svg";
 ---
 
 <a
-	class="shadow-lg rounded-lg relative col-span-2 sm:col-span-3 aspect-[3/2] row-span-2 overflow-hidden"
-	href="/curriculum-vitae"
+  class="shadow-lg rounded-lg relative col-span-2 sm:col-span-3 aspect-[3/2] row-span-2 overflow-hidden"
+  href="/curriculum-vitae"
 >
-	<!-- <Image class="background" src={LocalBackgroundImage} alt="Background" /> -->
-	<div class="bg-[#191919] h-full w-full flex flex-col items-center justify-center z-10">
-		<div class="w-full h-full flex flex-row justify-center gap-4 md:gap-12">
-			<div class="avatar flex flex-col justify-center">
-				<div
-					class="w-24 h-24 md:w-48 md:h-48 lg:h-60 lg:w-60 xl:w-72xl:h-72 rounded-full"
-					transition:name="introcard image"
-				>
-					<Image src={LocalMe1Image} alt="me" />
-				</div>
-			</div>
+  <div class="h-full w-full flex flex-col items-center justify-center z-10">
+    <div class="w-full h-full flex flex-row justify-center gap-4 md:gap-12">
+      <div class="avatar flex flex-col justify-center">
+        <div
+          class="w-24 h-24 md:w-48 md:h-48 lg:h-60 lg:w-60 xl:w-72xl:h-72 rounded-full"
+          transition:name="introcard image"
+        >
+          <Image src={LocalMe1Image} alt="me" />
+        </div>
+      </div>
 
-			<div class="flex flex-col justify-center">
-				<div
-					class="flex justify-start font-bold text-lg md:text-4xl lg:text-6xl mb-2 text-white black-text-shadow"
-					transition:name="introcard name"
-				>
-					Bryan Muñoz
-				</div>
-				<p
-					class="text-md md:text-lg lg:text-xl flex justify-start text-white black-text-shadow"
-					transition:name="introcard description"
-				>
-					Systems Engineer <br />Developer
-				</p>
-				
-			</div>
-		</div>
-		
-		<button class="mt-2 border-2 w-1/2 text-white hover:bg-gray-400/50 transition duration-1000 ease-in-out rounded-full px-2 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl font-semibold">
-			Ver Currículum 😏
-		</button>
-
-		<div class="px-6 py-4 flex flex-col align-middle z-10">
-			<div
-				class="flex flex-row justify-center"
-				transition:name="introcard tecnologies"
-			>
-				<span
-					class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150"
-				>
-					<Image src={LocalJavaImage} alt="Logo Java" />
-				</span>
-				<span
-					class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150"
-				>
-					<Image src={LocalPythonImage} alt="Logo Python" />
-				</span>
-				<span
-					class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150"
-				>
-					<Image src={LocalJavascriptImage} alt="Logo JavaScript" />
-				</span>
-				<span
-					class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150"
-				>
-					<Image src={LocalLinuxImage} alt="Logo Linux" />
-				</span>
-			</div>
-		</div>
-	</div>
+      <div class="flex flex-col justify-center">
+        <div
+          class="flex justify-start font-bold text-lg md:text-4xl lg:text-6xl mb-2 text-white black-text-shadow"
+          transition:name="introcard name"
+        >
+          Bryan Muñoz
+        </div>
+        <p
+          class="text-md md:text-lg lg:text-xl flex justify-start text-white black-text-shadow"
+          transition:name="introcard description"
+        >
+          Systems Engineer <br />Developer
+        </p>
+      </div>
+    </div>
+    <button
+      class="mt-2 border-2 w-1/2 text-white hover:bg-gray-400/50 transition duration-1000 ease-in-out rounded-full px-2 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl font-semibold"
+    >
+      Ver Currículum 😏
+    </button>
+    <div class="px-6 py-4 flex flex-col align-middle z-10">
+      <div
+        class="flex flex-row justify-center"
+        transition:name="introcard tecnologies"
+      >
+        <span
+          class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150"
+        >
+          <Image src={LocalJavaImage} alt="Logo Java" />
+        </span>
+        <span
+          class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150"
+        >
+          <Image src={LocalPythonImage} alt="Logo Python" />
+        </span>
+        <span
+          class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150"
+        >
+          <Image src={LocalJavascriptImage} alt="Logo JavaScript" />
+        </span>
+        <span
+          class="w-10 h-10 p-2 md:w-14 md:h-14 transition duration-500 hover:scale-150"
+        >
+          <Image src={LocalLinuxImage} alt="Logo Linux" />
+        </span>
+      </div>
+    </div>
+  </div>
 </a>

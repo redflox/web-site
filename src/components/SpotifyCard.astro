@@ -18,7 +18,7 @@ const data = await response.json();
     class="group bg-white aspect-square shadow-lg rounded-lg relative col-span-1 row-span-1 overflow-hidden flex flex-col"
 >
     <picture class="absolute bottom-0 left-0 -z-0 opacity-80 group-hover:blur-xs transition ease-in-out duration-500">
-        <img src={data.data.album.images[0].url} />
+        <img src={data.data.album.images[0].url} alt={data.data.name}/>
     </picture>
     <a
         href={data?.data.external_urls.spotify}
