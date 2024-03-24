@@ -1,0 +1,33 @@
+---
+import type { Post } from "src/models/wordpress";
+import { formatearFecha } from "../../utils/date.ts";
+
+const post: Post = Astro.props.post;
+const defaultImageUrl =
+  "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80";
+const featuredImageUrl =
+  post._embedded &&
+  post._embedded["wp:featuredmedia"] &&
+  post._embedded["wp:featuredmedia"][0].source_url
+    ? post._embedded["wp:featuredmedia"][0].source_url
+    : defaultImageUrl;
+---
+
+<article class="overflow-hidden rounded-lg shadow-lg lg:flex">
+  <img
+    class="object-cover w-full h-56 rounded-lg lg:w-64"
+    src={featuredImageUrl}
+    alt={post.title.rendered}
+  />
+  <div class="flex flex-col justify-between py-6 lg:mx-6">
+    <a
+      href={post.link}
+      target="_blank"
+      class="text-xl font-semibold text-gray-800 hover:underline dark:text-white"
+      >{post.title.rendered}</a
+    >
+    <span class="text-sm text-gray-500 dark:text-gray-300">
+      {formatearFecha((post.date).toString())}
+    </span>
+  </div>
+</article>
