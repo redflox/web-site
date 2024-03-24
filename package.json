@@ -11,26 +11,26 @@
     "eslint": "eslint \"src/**/*.{js,astro}\""
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "@astrojs/node": "^8.1.0",
-    "@astrojs/react": "^3.0.9",
+    "@astrojs/check": "^0.5.9",
+    "@astrojs/node": "^8.2.3",
+    "@astrojs/react": "^3.1.0",
     "@astrojs/tailwind": "^5.1.0",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "astro": "^4.2.6",
-    "astro-icon": "^1.0.3",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
+    "astro": "^4.5.5",
+    "astro-icon": "^1.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "spotify-web-api-node": "^5.0.2",
-    "tailwindcss": "^3.0.24",
-    "typescript": "^5.2.2"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
   },
   "devDependencies": {
-    "@types/spotify-web-api-node": "^5.0.10",
-    "@typescript-eslint/eslint-plugin": "^6.11.0",
-    "@typescript-eslint/parser": "^6.11.0",
-    "astro-eslint-parser": "^0.16.0",
-    "eslint": "^8.54.0",
-    "eslint-plugin-astro": "^0.29.1"
+    "@types/spotify-web-api-node": "^5.0.11",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "astro-eslint-parser": "^0.16.3",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^0.31.4"
   }
 }
