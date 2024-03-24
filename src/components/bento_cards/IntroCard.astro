@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import LocalMe1Image from "@/icons/me1.webp";
+// import LocalJavaImage from "../../icons/java.svg";
+// import LocalPythonImage from "../../icons/python.svg";
+// import LocalLinuxImage from "../../icons/linux.svg";
+// import LocalJavascriptImage from "../../icons/javascript.svg";
+// interface Props {
+// title: string;
+// body: string;
+// href: string;
+// }
+
+// const { href, title, body } = Astro.props;
+---
+
+<a
+  class="relative col-span-3 row-span-1 sm:row-span-2 sm:col-span-4 overflow-hidden bg-white shadow-lg rounded-lg"
+  href="/curriculum-vitae"
+>
+  <div
+    class="h-full w-full flex flex-col items-center justify-center z-10 text-black"
+  >
+    <div class="flex flex-col justify-center">
+      <div
+        class="flex justify-start font-bold text-lg md:text-4xl lg:text-6xl mb-2"
+        transition:name="introcard name"
+      >
+        Bryan Muñoz
+      </div>
+      <p
+        class="text-md md:text-lg lg:text-xl flex justify-start"
+        transition:name="introcard description"
+      >
+        Systems Engineer <br />Developer
+      </p>
+    </div>
+  </div>
+</a>
