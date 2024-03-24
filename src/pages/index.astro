@@ -1,16 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import IntroCard from '../components/IntroCard.astro';
-import ProjectsCard from '../components/SpotifyCard.astro';
-import PortafolioCard from '../components/PortfolioCard.astro';
-import BlogCard from '../components/BlogCard.astro';
+import IntroCard from '../components/bento_cards/IntroCard.astro';
+import ProjectsCard from '../components/bento_cards/SpotifyCard.astro';
+import PortafolioCard from '../components/bento_cards/PortfolioCard.astro';
+import BlogCard from '../components/bento_cards/BlogCard.astro';
+import ImgCard from '../components/bento_cards/ImgCard.astro';
+import LocalMe1Image from "@/icons/me1.webp";
 ---
 
 <Layout 
 	title="HOME | REDFLOX"
 >
 		<div 
-			class="m-auto max-w-6xl w-full  grid grid-cols-2 p-4 sm:grid-cols-4 gap-2 md:gap-2">
+			class="m-auto max-w-6xl w-full  grid grid-cols-4 p-4 sm:grid-cols-8 gap-2 md:gap-2">
+			<ImgCard src={LocalMe1Image} alt={'me'}/>
 			<IntroCard/>
 			<ProjectsCard/>
 			<BlogCard/>
