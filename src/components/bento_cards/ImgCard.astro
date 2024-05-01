@@ -1,0 +1,10 @@
+---
+import { Image } from 'astro:assets';
+const { src, alt } = Astro.props;
+---
+
+<div class="relative aspect-square shadow-lg rounded-lg col-span-1 row-span-1 sm:col-span-2 sm:row-span-2 overflow-hidden">
+    <picture class="absolute top-0 left-0 h-full w-auto">
+        <Image class="max-w-max max-h-full" src={src} alt={alt} />
+    </picture>
+</div>

@@ -1,0 +1,12 @@
+---
+import type { Post } from '../models/wordpress';
+
+export async function obtenerPosts(): Promise<Post[]> {
+    const url = 'https://blog.redflox.com/wp-json/wp/v2/posts?_embed';
+    const respuesta = await fetch(url);
+    if (!respuesta.ok) {
+        throw new Error('Error al recuperar los blogs');
+    }
+    return respuesta.json() as Promise<Post[]>;
+}
+---

@@ -10,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -20,7 +20,7 @@ const { title } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="h-full min-h-screen relative">
+  <body class="h-full min-h-screen relative bg-white dark:bg-black">
 	<div class="absolute gradient w-screen h-screen -z-10"></div>
     <header>
       <Navbar />
@@ -58,7 +58,6 @@ const { title } = Astro.props;
     }
 
     html {
-      background-color: #000;
       font-family: system-ui, sans-serif;
       color: white;
     }

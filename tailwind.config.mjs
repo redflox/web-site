@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: 'selector',
   theme: {
     extend: {
       backgroundImage: {
@@ -11,6 +12,8 @@ export default {
       aspectRatio: {
         "3/2": "3 / 2",
         "5/2": "5 / 2",
+        "6/1": "6 / 1",
+        "4/2": "4 / 2",
       },
       blur: {
         xs: "1px",

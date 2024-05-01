@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { obtenerPosts } from "../services/wordpress.astro";
+import type { Post } from "../models/wordpress";
+import Card from '../components/blog/Card.astro';
+
+let posts: Post[] = [];
+try {
+  posts = await obtenerPosts();
+  console.log("Posts: ", posts);
+} catch (error) {
+  console.error("Error al obtener los blogs: ", error);
+}
+---
+
+<Layout title="BLOG | REDFLOX">
+  <main class="container max-w-6xl py-10 m-auto px-4">
+	<h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
+		Blog
+	</h1>
+	<section class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+	  
+		{posts.map((post: Post) => (
+			<Card post={post}/>
+		))}
+	</section>
+  </main>
+</Layout>
