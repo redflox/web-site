@@ -1,28 +1,129 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { obtenerPosts } from "../services/wordpress.astro";
+import {
+	obtenerNumeroDePaginas,
+  obtenerPosts,
+  obtenerPostsPorPagina,
+} from "../services/wordpress.astro";
 import type { Post } from "../models/wordpress";
-import Card from '../components/blog/Card.astro';
+import Card from "../components/blog/Card.astro";
+
+const POSTS_PER_PAGE = 4;
+const PAGE = 1;
 
 let posts: Post[] = [];
+let page = PAGE;
+let postsPerPage = POSTS_PER_PAGE;
+let totalPages = 0;
+
+
 try {
-  posts = await obtenerPosts();
-  console.log("Posts: ", posts);
+	const pageParam: string | null = Astro.url.searchParams.get("page");
+	const postsPerPageParam: string | null = Astro.url.searchParams.get("postsPerPage");
+	if (pageParam) {
+		page = parseInt(pageParam);
+	}
+	if (postsPerPageParam) {
+		postsPerPage = parseInt(postsPerPageParam);
+	}
+	
+	console.log("page: ", page);
+	console.log("postsPerPage: ", postsPerPage);
+}catch (error) {
+	console.error("Error al obtener la página: ", error);
+}
+try {
+  posts = await obtenerPostsPorPagina(page, postsPerPage);
 } catch (error) {
   console.error("Error al obtener los blogs: ", error);
+}
+
+try {
+	totalPages = await await obtenerNumeroDePaginas(postsPerPage);
 }
 ---
 
 <Layout title="BLOG | REDFLOX">
   <main class="container max-w-6xl py-10 m-auto px-4">
-	<h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">
-		Blog
-	</h1>
-	<section class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
-	  
-		{posts.map((post: Post) => (
-			<Card post={post}/>
-		))}
-	</section>
+    <h1
+      class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white"
+    >
+      Blog
+    </h1>
+    <section
+      id="post-container"
+      class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2"
+    >
+      {posts.map((post: Post) => <Card post={post} />)}
+    </section>
+    <nav class="flex justify-center mt-10">
+      <ul class="inline-flex -space-x-px">
+        <li>
+          <button
+            id="prev"
+            class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          >
+            Anterior
+          </button>
+        </li>
+        <li>
+          <button
+            id="next"
+            class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          >
+            Siguiente
+          </button>
+        </li>
+      </ul>
+    </nav>
   </main>
 </Layout>
+
+<script>
+  import type { Post } from "src/models/wordpress";
+
+  const POSTS_PER_PAGE = 4;
+  let currentPage = 1;
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const prevButton = document.querySelector("#prev");
+    const nextButton = document.querySelector("#next");
+    if (prevButton === null || nextButton === null) {
+      throw new Error("No se encontraron los botones de paginación");
+    }
+    prevButton.addEventListener("click", () => changePage(-1));
+    nextButton.addEventListener("click", () => changePage(1));
+  });
+
+  async function changePage(direction:number) {
+    currentPage += direction;
+    if (currentPage < 1) currentPage = 1;
+
+    try {
+      const response = await fetch(
+        `/api/obtenerPostsPorPagina?postsPorPagina=${POSTS_PER_PAGE}&pagina=${currentPage}`
+      );
+      if (!response.ok) {
+        throw new Error("Error al recuperar los blogs");
+      }
+      const posts = await response.json();
+      const postsContainer = document.querySelector("#posts-container");
+      if (postsContainer === null) {
+        throw new Error("No se encontró el contenedor de blogs");
+      }
+      postsContainer.innerHTML = ""; // Clear previous results
+      posts.forEach((post: Post) => {
+        const postElement = document.createElement("div");
+        postElement.innerHTML = `
+			<article class="card">
+			  <h2>${post.title.rendered}</h2>
+			  <p>${post.excerpt.rendered}</p>
+			</article>
+		  `;
+        postsContainer.appendChild(postElement);
+      });
+    } catch (error) {
+      console.error("Error al cambiar de página: ", error);
+    }
+  }
+</script>
