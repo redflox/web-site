@@ -34,11 +34,9 @@ const initialTrackId = lastPlayed ? lastPlayed.id : null;
   <div class="relative max-w-[var(--page-width)] mx-auto pointer-events-auto">
     <div class="transition duration-700 w-full left-0 right-0 mx-auto gap-4 px-0 md:px-4 onload-animation">
       
-      <!-- ✅ Título Principal -->
-      <h1 class="text-4xl font-bold text-center text-[var(--primary)] ">🎵 Mi Música</h1>
 
       <!-- ✅ Reproductor -->
-      <section class="mt-8 bg-[var(--card-bg)] p-6 rounded-[var(--radius-large)] shadow-md">
+      <section class="bg-[var(--card-bg)] p-6 rounded-[var(--radius-large)] shadow-md">
         <h2 class="text-2xl font-semibold text-[var(--primary)] dark:text-neutral-50">Reproductor</h2>
         <iframe
             id="spotify-player"
@@ -53,7 +51,7 @@ const initialTrackId = lastPlayed ? lastPlayed.id : null;
 
       <!-- ✅ Última Canción Escuchada -->
       {lastPlayed && (
-        <section class="mt-8 bg-[var(--card-bg)] p-6 rounded-[var(--radius-large)] shadow-md">
+        <section class="mt-4 bg-[var(--card-bg)] p-6 rounded-[var(--radius-large)] shadow-md">
           <h2 class="text-2xl font-semibold text-[var(--primary)] dark:text-neutral-50">Última Canción Escuchada</h2>
           <div
             class="flex items-center gap-4 p-4 bg-[var(--btn-regular-bg)] rounded-lg hover:bg-[var(--btn-regular-bg-hover)] cursor-pointer transition"
@@ -76,7 +74,7 @@ const initialTrackId = lastPlayed ? lastPlayed.id : null;
 
       <!-- ✅ Top Canciones -->
       {topTracks && (
-        <section class="mt-8 bg-[var(--card-bg)] p-6 rounded-[var(--radius-large)] shadow-md">
+        <section class="mt-4 bg-[var(--card-bg)] p-6 rounded-[var(--radius-large)] shadow-md">
           <h2 class="text-2xl font-semibold text-[var(--primary)] dark:text-neutral-50">Top Canciones</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             {topTracks.map((track) => (
@@ -98,7 +96,7 @@ const initialTrackId = lastPlayed ? lastPlayed.id : null;
 
       <!-- ✅ Top Artistas -->
       {topArtists && (
-        <section class="mt-8 bg-[var(--card-bg)] p-6 rounded-[var(--radius-large)] shadow-md mb-10">
+        <section class="mt-4 bg-[var(--card-bg)] p-6 rounded-[var(--radius-large)] shadow-md mb-10">
           <h2 class="text-2xl font-semibold text-[var(--primary)] dark:text-neutral-50">Top Artistas</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
             {topArtists.items.map((artist) => (
