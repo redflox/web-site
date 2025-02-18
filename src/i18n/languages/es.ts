@@ -9,6 +9,7 @@ export const es: Translation = {
   [Key.blogs]: 'Blogs',
   [Key.gallery]: 'Galeria',
   [Key.search]: 'Buscar',
+  [Key.music]: 'Musica',
 
   [Key.tags]: 'Etiquetas',
   [Key.categories]: 'Categorías',

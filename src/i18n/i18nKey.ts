@@ -6,6 +6,7 @@ enum I18nKey {
   gallery = 'gallery',
   archive = 'archive',
   search = 'search',
+  music = 'music',
 
   tags = 'tags',
   categories = 'categories',
