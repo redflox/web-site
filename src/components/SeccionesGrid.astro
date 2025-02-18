@@ -1,0 +1,25 @@
+---
+const secciones = [
+    { titulo: "💻 Portafolio", descripcion: "Proyectos destacados de desarrollo de software.", enlace: "https://bfmu.dev" },
+    { titulo: "📚 Guías y artículos", descripcion: "Soluciones y optimización de procesos.", enlace: "/archive/" },
+    { titulo: "🌟 Exploraciones artísticas", descripcion: "Fotografía y momentos que inspiran.", enlace: "/gallery/" },
+    { titulo: "📝 Resúmenes y opiniones", descripcion: "Libros que leo y reflexiones sobre ellos.", enlace: "/blogs/" },
+    { titulo: "🎧 Música que me inspira", descripcion: "Canciones y playlists que forman parte de mi día a día.", enlace: "/music/" },
+]
+---
+
+<section class="w-full py-16 bg-[var(--card-bg)] text-center rounded-[var(--radius-large)] shadow-md">
+    <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-[var(--primary)] dark:text-[var(--title-active)]">Explora mi contenido</h2>
+        <p class="text-lg text-[var(--deep-text)] dark:text-white mt-4">Descubre mis proyectos, ideas y pasiones a través de estas secciones.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto px-6">
+        {secciones.map((seccion) => (
+            <a href={seccion.enlace} class="p-6 bg-[var(--btn-regular-bg)] hover:bg-[var(--btn-regular-bg-hover)] active:bg-[var(--btn-regular-bg-active)] text-[var(--btn-content)] rounded-lg text-lg font-semibold transition shadow-md block text-center">
+                <h3 class="text-xl font-semibold text-[var(--primary)] dark:text-[var(--title-active)]">{seccion.titulo}</h3>
+                <p class="text-[var(--deep-text)] dark:text-white mt-2">{seccion.descripcion}</p>
+            </a>
+        ))}
+    </div>
+</section>

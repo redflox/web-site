@@ -1,7 +1,34 @@
 ---
-import MainGridLayout from '../layouts/MainGridLayout.astro'
+import MainLayout from '@layouts/MainLayout.astro'
+import Hero from '@components/Hero.astro'
+import IntroPersonal from '@components/IntroPersonal.astro'
+import SeccionesGrid from '@components/SeccionesGrid.astro'
+import UltimosPosts from '@components/UltimosPosts.astro'
 ---
 
-<MainGridLayout>
-    <h1>HOLA MUNDOOOO</h1>
-</MainGridLayout>
+<MainLayout>
+    <div class="relative max-w-[var(--page-width)] mx-auto pointer-events-auto">
+        <div id="main-grid" class="transition duration-700 w-full left-0 right-0 mx-auto gap-4 px-0 md:px-4 onload-animation">
+            
+            <!-- Hero Section -->
+            <section class="mb-12">
+                <Hero />
+            </section>
+
+            <!-- Introducción Personal -->
+            <section class="mb-12">
+                <IntroPersonal />
+            </section>
+
+            <!-- Grid Interactivo con las Secciones del Sitio -->
+            <section class="mb-12">
+                <SeccionesGrid />
+            </section>
+
+            <!-- Últimos Artículos Publicados -->
+            <section class="mb-12">
+                <UltimosPosts />
+            </section>
+        </div>
+    </div>
+</MainLayout>

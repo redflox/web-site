@@ -7,7 +7,7 @@ import type {
 import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
-  title: 'Redflox',
+  title: 'bfmu.dev',
   subtitle: '| Bryan Muñoz',
   lang: 'es',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
   themeColor: {
@@ -40,13 +40,14 @@ export const siteConfig: SiteConfig = {
 export const navBarConfig: NavBarConfig = {
   links: [
     LinkPreset.Home,
-    LinkPreset.Gallery,
+    // LinkPreset.Gallery,
+    LinkPreset.Music,
     LinkPreset.Blog,
     LinkPreset.Archive,
     LinkPreset.About,
     {
       name: 'Portafolio',
-      url: 'https://bfmu.dev/',     // Internal links should not include the base path, as it is automatically added
+      url: 'https://portfolio.bfmu.dev/',     // Internal links should not include the base path, as it is automatically added
       external: true,                               // Show an external link icon and will open in a new tab
     },
   ],

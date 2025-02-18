@@ -1,0 +1,18 @@
+---
+import { siteConfig } from '../config'
+---
+
+<section class="relative w-full h-[70vh] flex items-center justify-center text-center bg-cover bg-center rounded-[var(--radius-large)] shadow-md"
+    style=`background-image: url(${siteConfig.banner.src})`>
+    <div class="bg-black/50 w-full h-full flex flex-col items-center justify-center px-6 rounded-[var(--radius-large)]">
+        <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+            Desarrollo, Fotografía y Reflexión
+        </h1>
+        <p class="text-lg text-[var(--btn-content)] mt-4 max-w-2xl">
+            "Desarrollo soluciones. Capturo momentos. Reflexiono sobre historias. Aquí es donde todo converge."
+        </p>
+        <a href="#explore" class="mt-6 px-6 py-3 bg-[var(--btn-regular-bg)] hover:bg-[var(--btn-regular-bg-hover)] active:bg-[var(--btn-regular-bg-active)] text-[var(--btn-content)] rounded-lg text-lg font-semibold transition shadow-md">
+            Explorar
+        </a>
+    </div>
+</section>
